@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->string('nombrecompleto')->nullable();
+        Schema::create('horas_de_entradas', function (Blueprint $table) {
+            $table->id();
+            $table->time('hora');
+            $table->boolean('ultimousosn');
+            $table->timestamps();
         });
     }
 
@@ -26,9 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->dropColumn('nombrecompleto');
-        });
+        Schema::dropIfExists('horas_de_entradas');
     }
 };

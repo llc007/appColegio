@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('atrasos', function (Blueprint $table) {
             //
-            $table->string('nombrecompleto')->nullable();
+            $table->foreignId('hora_entrada')
+                ->references('id')
+                ->on('horas_de_entradas')
+                ->constrained();
         });
     }
 
@@ -26,9 +29,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('atrasos', function (Blueprint $table) {
             //
-            $table->dropColumn('nombrecompleto');
+            $table->dropColumn('hora_entrada');
         });
     }
 };

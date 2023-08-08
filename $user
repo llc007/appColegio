@@ -1,0 +1,18 @@
+[90m= [39m[34;4mApp\Models\User[39;24m {#4998
+    [34mid[39m: [35m1[39m,
+    [34mname[39m: "[32mLuis[39m",
+    [34memail[39m: "[32mllc007.1@gmail.com[39m",
+    [34memail_verified_at[39m: [36mnull[39m,
+    #[33mpassword[39m: "[32m$2y$10$lnS/imYccdi8ZcDDKBMtDOaf5qYed20FaCjc7.VBIk84jLJgtToAe[39m",
+    #[33mremember_token[39m: "[32my1BJkIaSEepoctjFj0q9kAWvFMBwKnkD5h6AI8Pedl7OPUauNIM9TkUqAyLf[39m",
+    [34mcreated_at[39m: "[32m2022-12-06 17:00:12[39m",
+    [34mupdated_at[39m: "[32m2023-01-23 20:02:36[39m",
+    [34mrut[39m: "[32m17735913[39m",
+    [34mdv[39m: "[32m0[39m",
+    [34mpaterno[39m: "[32mLopez[39m",
+    [34mmaterno[39m: "[32mCortes[39m",
+    [34mtipoUser[39m: [35m1[39m,
+    [34mcurso_id[39m: [36mnull[39m,
+    [34mnombrecompleto[39m: "[32mLOPEZ CORTES LUIS[39m",
+  }
+

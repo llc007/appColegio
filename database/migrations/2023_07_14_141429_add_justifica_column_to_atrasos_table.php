@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('atrasos', function (Blueprint $table) {
             //
-            $table->string('nombrecompleto')->nullable();
+            $table->boolean('justifica')->nullable();
+
         });
     }
 
@@ -26,9 +27,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('atrasos', function (Blueprint $table) {
             //
-            $table->dropColumn('nombrecompleto');
+            $table->dropColumn('justifica');
         });
     }
 };

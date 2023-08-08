@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\AtrasoController;
 use App\Http\Controllers\ChirpController;
+use App\Http\Controllers\CursoController;
 use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\ExcelController;
+use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PerfilController;
+use App\Http\Livewire\Roles;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,17 +49,23 @@ Route::resource('chirps', ChirpController::class)
 
 //Atrasos
 Route::resource('atrasos', AtrasoController::class)
-    ->only(['index','store','edit','update','destroy'])
+    ->only(['index','store','edit','update','destroy','create'])
     ->middleware(['auth','verified']);
+
 
 //Estudiantes
 Route::resource('estudiantes', EstudianteController::class)
     ->only(['index','store','edit','update','destroy'])
     ->middleware(['auth','verified']);
 
+//Funcionarios
+Route::resource('funcionarios', FuncionarioController::class)
+    ->only(['index','store','edit','update','destroy'])
+    ->middleware(['auth','verified']);
+
 
 //CURSOS
-Route::resource('cursos',\App\Http\Controllers\CursoController::class)->middleware('auth');
+Route::resource('cursos', CursoController::class)->middleware('auth');
 
 //REPORTES
 Route::get('/reports',[ExcelController::class,'index'])->name('reports');
@@ -66,6 +75,13 @@ Route::get('/reports/users',[ExcelController::class,'Users'])->name('reports.use
 Route::get('/imports', [ExcelController::class,'indexImport'])->name('imports');
 Route::get('/imports/users', [ExcelController::class,'userImport'])->name('imports.users');
 Route::POST('/imports/users', [ExcelController::class,'storeUsers'])->name('imports.users.store');
+
+//RUTAS DE PRUEBA ROLES
+Route::group(['middleware' => ['role:admin']], function () {
+    //rutas accesibles solo para admins
+ Route::get('roles', Roles::class)->name('roles');
+
+});
 
 
 require __DIR__.'/auth.php';

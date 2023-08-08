@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('atrasos', function (Blueprint $table) {
             //
-            $table->string('nombrecompleto')->nullable();
+            $table->date('fecha_atraso');
+            $table->time('hora_atraso');
+            $table->foreignId('user_id')->constrained();
         });
     }
 
@@ -26,9 +28,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('atrasos', function (Blueprint $table) {
             //
-            $table->dropColumn('nombrecompleto');
         });
     }
 };

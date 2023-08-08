@@ -8,10 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Scout\Searchable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, Searchable;
+    use HasApiTokens, HasFactory, Notifiable, Searchable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -76,7 +77,13 @@ class User extends Authenticatable
         return $this->hasMany(Chirp::class);
     }
 
+
     public function curso(){
         return $this->belongsTo(Curso::class);
+    }
+
+    public function atrasos()
+    {
+        return $this->hasMany(Atraso::class);
     }
 }

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Atraso;
 use Illuminate\Http\Request;
 
-class AtrasoController extends Controller
+class FuncionarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class AtrasoController extends Controller
     public function index()
     {
         //
-        return view('atrasos.index');
+        return view('funcionarios.index');
     }
 
     /**
@@ -26,9 +25,6 @@ class AtrasoController extends Controller
     public function create()
     {
         //
-
-
-        return view('atrasos.create');
     }
 
     /**
@@ -45,10 +41,10 @@ class AtrasoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Atraso  $atraso
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Atraso $atraso)
+    public function show($id)
     {
         //
     }
@@ -56,10 +52,10 @@ class AtrasoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Atraso  $atraso
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Atraso $atraso)
+    public function edit($id)
     {
         //
     }
@@ -68,10 +64,10 @@ class AtrasoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Atraso  $atraso
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Atraso $atraso)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -79,16 +75,11 @@ class AtrasoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Atraso  $atraso
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Atraso $atraso)
+    public function destroy($id)
     {
         //
-        $this->authorize('delete',$atraso);
-        $atraso->delete();
-        return redirect(route('atrasos.create'));
     }
-
-
 }

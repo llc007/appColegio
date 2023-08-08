@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DatosUser;
+use App\Models\HorasDeEntrada;
 use Illuminate\Http\Request;
 
-class DatosUserController extends Controller
+class HorasDeEntradaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class DatosUserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\DatosUser  $datosUser
+     * @param  \App\Models\HorasDeEntrada  $horasDeEntrada
      * @return \Illuminate\Http\Response
      */
-    public function show(DatosUser $datosUser)
+    public function show(HorasDeEntrada $horasDeEntrada)
     {
         //
     }
@@ -52,10 +52,10 @@ class DatosUserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\DatosUser  $datosUser
+     * @param  \App\Models\HorasDeEntrada  $horasDeEntrada
      * @return \Illuminate\Http\Response
      */
-    public function edit(DatosUser $datosUser)
+    public function edit(HorasDeEntrada $horasDeEntrada)
     {
         //
     }
@@ -64,10 +64,10 @@ class DatosUserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\DatosUser  $datosUser
+     * @param  \App\Models\HorasDeEntrada  $horasDeEntrada
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DatosUser $datosUser)
+    public function update(Request $request, HorasDeEntrada $horasDeEntrada)
     {
         //
     }
@@ -75,10 +75,10 @@ class DatosUserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\DatosUser  $datosUser
+     * @param  \App\Models\HorasDeEntrada  $horasDeEntrada
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DatosUser $datosUser)
+    public function destroy(HorasDeEntrada $horasDeEntrada)
     {
         //
     }
