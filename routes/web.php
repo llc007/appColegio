@@ -76,10 +76,11 @@ Route::get('/imports', [ExcelController::class,'indexImport'])->name('imports');
 Route::get('/imports/users', [ExcelController::class,'userImport'])->name('imports.users');
 Route::POST('/imports/users', [ExcelController::class,'storeUsers'])->name('imports.users.store');
 
+
 //RUTAS DE PRUEBA ROLES
 Route::group(['middleware' => ['role:admin']], function () {
     //rutas accesibles solo para admins
- Route::get('roles', Roles::class)->name('roles');
+ Route::get('roles', [FuncionarioController::class, 'roles'])->name(name: 'roles');
 
 });
 

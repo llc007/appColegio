@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class FuncionarioController extends Controller
@@ -81,5 +82,11 @@ class FuncionarioController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function roles()
+    {
+        $roles = Role::all();
+        return view('roles.index', compact('roles'));
     }
 }
